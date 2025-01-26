@@ -48,13 +48,13 @@ header {
     gap: 1rem; /* Relative spacing */
     justify-content: flex-end;
     width: 100%;
-    text-shadow: 3px 3px 6px rgba(201, 201, 201, 0.829);
+    text-shadow: 3px 3px 6px rgba(15, 15, 15, 0.829);
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #727272;
-    font-size: 1rem; /* Adjust font size */
+    color: #c5b4a3;
+    font-size: 2rem; /* Adjust font size */
     transition: color 0.3s;
     font-weight: bold;
 }
