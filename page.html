@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page_style.css">
+    <title>CzMTzS</title>
+    <link rel="icon" type="image/x-icon" href="assets\pierog.png">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="assets/logo.png" alt="Logo" class="logo-png">
+            <h1 class="site-name">Co z mąki to z serca!</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">O nas</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="menu" class="menu-section">
+            <h2>Aktualna oferta Co z Mąki To z Serca</h2>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <span class="dish-name">Pierogi ziemniaczano-serowe (porcja 12 sztuk)</span>
+                    <span class="price">17 zł</span>
+                    <span class="extras">z cebulką ze skwarkami</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish-name">Pierogi mięsne (porcja 12 sztuk)</span>
+                    <span class="price">22 zł</span>
+                    <span class="extras">z cebulką ze skwarkami</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish-name">Pierogi z serem na słodko (porcja 12 sztuk)</span>
+                    <span class="price">22 zł</span>
+                    <span class="extras">z polewą</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish-name">Pierogi ziemniaczano-serowe - 1 kg</span>
+                    <span class="price">35 zł</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish-name">Pierogi mięsne - 1 kg</span>
+                    <span class="price">45 zł</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish-name">Pierogi z serem na słodko - 1 kg</span>
+                    <span class="price">45 zł</span>
+                </div>
+                <div class="menu-item">
+                    <span class="dish-name">Cebulka ze skwarkami - ok. 30 gramów</span>
+                    <span class="price">2,50 zł</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="text-content">
+                    <h2>O nas</h2>
+                    <p>Z dziecięcej miłości do zajadania się pierogami mamy, powstała pasja do robienia ich
+                        samodzielnie.</p>
+                    <p>Mam na imię Wojtek i zapraszam Państwa do spróbowania efektów wielu lat dojrzewania tej pasji,
+                        które mnie
+                        doprowadziły właśnie w to miejsce.</p>
+                    <p>Zapraszamy do spróbowania naszej oferty, która zadowoli nawet najbardziej wymagające
+                        podniebienia!</p>
+                </div>
+                <div class="image-gallery">
+                    <div class="portfolio-item">
+                        <img src="assets/wojtek.jpg" alt="Kucharz" class="popup-image">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/pierogi_z_cebulka.jpg" alt="Pierogi z cebulką" class="popup-image">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/fistaszki.jpg" alt="Pierogi z fistaszkami" class="popup-image">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/kuleczki.jpg" alt="Farsz do pierogów" class="popup-image">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/pierogi_na_tacy.jpg" alt="Pierogi na tacy" class="popup-image">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/cebulka.jpg" alt="Smażona cebulka" class="popup-image">
+                    </div>
+                </div>
+        </section>
+
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="caption"></div>
+        </div>
+    </main>
+
+    <footer id="contact" class="footer-section">
+        <h3>Kontakt</h3>
+        <ul>
+            <li><a href="https://www.facebook.com/profile.php?id=61567865085944" target="_blank">Facebook</a></li>
+            <li><a href="cozmakitozserca@gmail.com">cozmakitozserca@gmail.com</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        var images = document.querySelectorAll('.popup-image');
+        var modal = document.getElementById('imageModal');
+        var modalImage = document.getElementById('modalImage');
+        var captionText = document.getElementById('caption');
+        var closeButton = document.getElementsByClassName('close')[0];
+
+        images.forEach(function (image) {
+            image.addEventListener('click', function () {
+                modal.style.display = 'block';
+                modalImage.src = this.src;
+            });
+        });
+
+        closeButton.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
